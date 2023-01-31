@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 페이지</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/formTask.css">
+</head>
+<body>
+	<div>
+		<div class = "body-layout">
+			<h1>숨고에 오신 것을 환영합니다.</h1>
+			<!-- 입력창 박스-->
+		<div class = "form-layout">
+			<form>
+			<!-- 입력창 레이아웃-->
+				<div class ="form-row">
+					<!-- 입력창들-->
+					<div class ="input-data">
+						<!-- 이름 입력 -->
+						<fieldset class="text-field">
+							<legend class ="form-label">이름</legend>
+							<div>
+								<input id="userName" class= "text-input form-control" type = "text" name ="userName" placeholder="이름(실명)을 입력해주세요">
+							</div>
+							<div class ="display-none">오류입니다.</div>
+						</fieldset>
+					</div>
+					<div class ="input-data">
+						<!-- 이메일 입력 -->
+						<fieldset class="text-field">
+							<legend class ="form-label">이메일</legend>
+							<div>
+								<input class= "text-input form-control" type = "text" name ="userEmail" placeholder="example@soomgo.com">
+							</div>
+						</fieldset>
+					</div>
+					<div class ="input-data">
+						<!-- 비밀번호 입력 -->
+						<fieldset class="text-field">
+							<legend class ="form-label">비밀번호</legend>
+							<div>
+								<input class= "text-input form-control" type = "password" name ="userPassword" placeholder="영문+숫자 조합 8자리 이상 입력해주세요">
+							</div>
+						</fieldset>
+					</div>
+					<div class ="input-data">
+					<!-- 선택하는 구역 -->
+						<section style ="display : block;">
+							<!-- 전체 동의 -->
+							<div class ="all-check custom-checkbox custom-control">
+								<input class ="custom-control-input" type="checkbox" id = "allSelect">
+								<label class ="custom-control-label" for = "allSelect">
+									<span class = "all-check-label">전체동의</span>
+								</label>
+							</div>
+							<div class ="terms-container">
+								<!-- 3가지 선택 이용약관, 개인정보 이용 동의, 만14세이상 -->
+								<div>
+									<ul>
+										<li class = "term-item">
+											<!-- 이용약관 -->
+											<div class = "custom-control custom-checkbox">
+												<input class ="custom-control-input"  type = "checkbox" id = "useCheck">
+												<label class ="custom-control-label" for="useCheck">
+													<p class ="term-label" style="padding-left: 7px;">(필수) 이용약관 동의</p>
+												</label>
+											</div>
+											<button class = "btn btn-none" id ="detail-button">보기</button>
+										</li>
+										<li class = "term-item" style = "margin-top: 1rem;">
+											<!-- 개인정보 이용 동의 -->
+											<div class = "custom-control custom-checkbox">
+												<input class ="custom-control-input" type = "checkbox" id = "useAgree">
+												<label class ="custom-control-label" for="useAgree">
+													<p class ="term-label" style="padding-left: 7px;"> (필수) 개인정보 수집 및 이용 동의</p>
+												</label>
+											</div>
+											<button id ="detail-button" class ="btn btn-none">보기</button>
+										</li>
+										<li class = "term-item" style = "margin-top: 1rem;">
+											<!-- 만14세이상 -->
+											<div class = "custom-control custom-checkbox">
+												<input class ="custom-control-input" type = "checkbox" id = "ageCheck">
+												<label class ="custom-control-label" for="ageCheck">
+													<p class ="term-label" style="padding-left: 7px;">(필수) 14세 이상</p>
+												</label>
+											</div>
+											<button id ="detail-button" class ="btn btn-none">보기</button>
+										</li>
+									</ul>
+								</div>
+						</section>
+					</div>
+						<!-- 회원가입 버튼 -->
+						<div class ="input-data">
+							<button class ="btn btn-signup btn-primary btn-submit">
+								<span>
+									회원가입
+								</span>
+							</button>
+						</div>
+						<!-- 페이스북으로 가입 버튼 -->
+						<div class ="input-data" style = "margin-top : 10px;">
+							<button class ="btn btn-signup btn-primary btn-submit btn-facebook">
+								<img src = "https://assets.cdn.soomgo.com/icons/icon-login-facebook-btn.svg">
+								<span>
+									Facebook으로 가입하기
+								</span>
+							</button>
+						</div>
+						<!-- 고수로 가입 -->
+						<div class ="input-data">
+							<a class ="pro-sign-up">
+								고수로 가입하시나요? 
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+	let userName = $("#userName");
+	
+	userName.keyup(function(e){
+		$(".display-none").attr('class','invalid-feedback');
+	});
+
+</script>
+</html>
